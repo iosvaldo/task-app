@@ -34,7 +34,8 @@
 .input-wrap {
   display: flex;
   transition: 250ms ease;
-  border: 2px solid #41b080;
+  border-radius: 1em;
+  border: 2px solid #2eaae4;
     &.input-err {
     border-color: red;
   }
@@ -44,6 +45,7 @@
   }
   input {
     width: 100%;
+    border-radius: 1em;
     padding: 8px 6px;
     border: none;
     &:focus {

@@ -15,7 +15,7 @@
 
 <template>
 <li>
-  <input type="checkbox" :checked="todo.isCompleted" @input="$emit('toggle-complete', index)">
+  <input class="input-field" type="checkbox" :checked="todo.isCompleted" @input="$emit('toggle-complete', index)">
   <div class="todo">
     <input v-if="todo.isEditing" type="text" :value="todo.todo" 
     @input="$emit('update-todo',$event.target.value,index)"> 
@@ -40,6 +40,7 @@ li {
   gap: 10px;
   padding: 16px 10px;
   background-color: #f1f1f1;
+  border-radius: 1em;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   &:hover {
@@ -49,17 +50,20 @@ li {
   }
   input[type="checkbox"] {
     appearance: none;
+    
     width: 20px;
     height: 20px;
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     &:checked {
-      background-color: #41b080;
+      background-color: #2eaae4;
     }
   }
+  
   .todo {
     flex: 1;
+  
 .completed-todo{
   text-decoration:line-through ;
 }
@@ -67,17 +71,26 @@ li {
     input[type="text"] {
       width: 100%;
       padding: 2px 6px;
-      border: 2px solid #41b080;
+      border: 2px solid #2eaae4;
+      
+     
+     
     }
+   
+   
   }
   .todo-actions {
     display: flex;
     gap: 6px;
-    opacity: 0;
+    opacity: 20%;
     transition: 150ms ease-in-out;
     .icon {
       cursor: pointer;
     }
+  }
+
+  .input-field {
+    border-radius: 1em !important;
   }
 }
 </style>
